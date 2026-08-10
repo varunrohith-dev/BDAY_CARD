@@ -1,0 +1,124 @@
+/* Vinyl Turntable Detailed CSS Styling */
+.vinyl-disc {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #18181b 15%, #09090b 22%, #27272a 24%, #09090b 35%, #18181b 45%, #09090b 58%, #27272a 65%, #09090b 80%, #18181b 100%);
+  box-shadow: 0 0 50px rgba(0,0,0,0.9), 0 0 25px rgba(255, 255, 255, 0.05), inset 0 0 2px rgba(255, 255, 255, 0.4);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .vinyl-disc {
+    width: 360px;
+    height: 360px;
+  }
+}
+
+.vinyl-disc::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 3px,
+    transparent 6px
+  );
+  pointer-events: none;
+}
+
+.vinyl-label {
+  width: 32%;
+  height: 32%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f43f5e 0%, #8b5cf6 50%, #3b82f6 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5), 0 0 15px rgba(0,0,0,0.5);
+  border: 4px solid #111827;
+  color: white;
+  text-align: center;
+  z-index: 2;
+}
+
+.vinyl-center-hole {
+  width: 14px;
+  height: 14px;
+  background: #090a0f;
+  border-radius: 50%;
+  border: 2px solid #6b7280;
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.9);
+}
+
+.tonearm {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  width: 140px;
+  height: 180px;
+  pointer-events: none;
+  z-index: 10;
+  transform-origin: 100px 30px;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tonearm.off {
+  transform: rotate(-35deg);
+}
+
+.tonearm.on {
+  transform: rotate(14deg);
+}
+
+/* Timeline Ambient Background Dynamic Glow */
+.ambient-glow-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  transition: background 1.5s ease;
+}
+
+.ambient-particle-canvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Audio Visualizer Pulser */
+.visualizer-canvas {
+  position: absolute;
+  inset: -40px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Sound Wave Animation Bars */
+.sound-wave-bar {
+  width: 3px;
+  background: linear-gradient(to top, #fbbf24, #f43f5e);
+  border-radius: 3px;
+  animation: wave 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% { height: 4px; }
+  100% { height: 24px; }
+}
+
+/* Custom handwriting text styling */
+.handwritten {
+  font-family: var(--font-handwriting);
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
