@@ -47,29 +47,6 @@ export const TimelineSection = ({ onTrackChange }) => {
     };
   }, [onTrackChange]);
 
-  const handleTouchStart = (e) => {
-    touchStartY.current = e.touches[0].clientY;
-  };
-
-  const handleTouchMove = (e) => {
-    touchEndY.current = e.touches[0].clientY;
-  };
-
-  const handleTouchEnd = () => {
-    const distance = touchStartY.current - touchEndY.current;
-    const minSwipeDistance = 50;
-
-    if (Math.abs(distance) > minSwipeDistance) {
-      if (distance > 0) {
-        const nextIndex = Math.min(DEFAULT_PLAYLIST.length - 1, activeChapterIndex + 1);
-        scrollToChapter(nextIndex);
-      } else {
-        const prevIndex = Math.max(0, activeChapterIndex - 1);
-        scrollToChapter(prevIndex);
-      }
-    }
-  };
-
   const scrollToChapter = (index) => {
     const targetEl = document.querySelector(`[data-track-index="${index}"]`);
     if (targetEl) {
@@ -94,9 +71,6 @@ export const TimelineSection = ({ onTrackChange }) => {
   return (
     <div
       ref={containerRef}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
       className="relative z-10 w-full max-w-7xl 2xl:max-w-[1700px] mx-auto px-4 sm:px-12 py-20 sm:py-32 flex flex-col items-center text-center space-y-40 sm:space-y-56"
     >
       {/* Floating Side Chapter Indicator Dots */}
@@ -114,14 +88,14 @@ export const TimelineSection = ({ onTrackChange }) => {
       </div>
 
       {/* CHAPTER 1 */}
-      <section className="timeline-chapter-section w-full min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16" data-track-index="0">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-16 sm:py-28" data-track-index="0">
         {/* CENTERED TEXT HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-28 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
         >
           <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-indigo-300 mb-6 border border-indigo-400/30">
             <Compass className="w-4 h-4 text-indigo-400" />
@@ -137,7 +111,7 @@ export const TimelineSection = ({ onTrackChange }) => {
           </p>
         </motion.div>
 
-        {/* CENTERED IMAGES GRID WITH WIDE SPACING (GAP-20 / GAP-36) */}
+        {/* CENTERED IMAGES GRID */}
         <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4">
           {MEMORIES_DATA.chapter1.map((mem) => (
             <MemoryCard key={mem.id} memory={mem} onOpenStory={(m) => setSelectedStory(m)} />
@@ -146,13 +120,13 @@ export const TimelineSection = ({ onTrackChange }) => {
       </section>
 
       {/* CHAPTER 2 */}
-      <section className="timeline-chapter-section w-full min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16" data-track-index="1">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-20 sm:py-32" data-track-index="1">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-28 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
         >
           <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-amber-300 mb-6 border border-amber-400/30">
             <Sparkles className="w-4 h-4 text-amber-400" />
@@ -176,13 +150,13 @@ export const TimelineSection = ({ onTrackChange }) => {
       </section>
 
       {/* CHAPTER 3 */}
-      <section className="timeline-chapter-section w-full min-h-[85vh] flex flex-col items-center justify-center pt-24 sm:pt-32 pb-16" data-track-index="2">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-20 sm:py-32" data-track-index="2">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-28 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
         >
           <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-emerald-300 mb-6 border border-emerald-400/30">
             <Star className="w-4 h-4 text-emerald-400" />

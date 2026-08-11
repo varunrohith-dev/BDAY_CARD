@@ -39,9 +39,9 @@ export const EndingSection = ({ onReplay }) => {
   };
 
   return (
-    <section className="relative z-10 w-full min-h-[90vh] sm:min-h-screen flex flex-col items-center justify-between mx-auto pt-12 select-none">
+    <section className="relative z-10 w-full flex flex-col items-center justify-center mx-auto py-16 sm:py-24 select-none">
 
-      <div className="flex-1 flex flex-col items-center justify-center w-full max-w-4xl px-4 sm:px-8 py-8 my-auto">
+      <div className="flex flex-col items-center justify-center w-full max-w-4xl px-4 sm:px-8">
         {/* PERFECTLY CENTERED MORPHING QUOTE CARD */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
@@ -64,8 +64,8 @@ export const EndingSection = ({ onReplay }) => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold font-serif text-white tracking-tight leading-snug sm:leading-relaxed mb-6 glow-text text-center mx-auto max-w-xl sm:max-w-2xl">
 
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-rose-400 to-emerald-400">
-              Your Life Journey With Daddy's Advices!
-            </span>"
+              Your Cycle with this Daddy!
+            </span>
           </h2>
 
           <p className="text-slate-200 text-sm sm:text-base max-w-xl mx-auto font-light leading-relaxed mb-8 italic text-center">

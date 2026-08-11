@@ -9,13 +9,20 @@ export const StoryReaderModal = ({ isOpen, memory, onClose, onNext, onPrev }) =>
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+      window.history.pushState({ modalOpen: true }, '');
+
+      const handlePopState = () => {
+        onClose();
+      };
+
+      window.addEventListener('popstate', handlePopState);
+
+      return () => {
+        document.body.style.overflow = '';
+        window.removeEventListener('popstate', handlePopState);
+      };
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   useEffect(() => {
     let activeAudio = null;

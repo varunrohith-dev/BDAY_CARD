@@ -59,7 +59,7 @@ export const MemoryCard = ({ memory, onOpenStory }) => {
           {/* Photo Container - Tapping photo frame directly opens full page view */}
           <div
             onClick={handleImageClick}
-            className="relative aspect-[4/3] overflow-hidden rounded bg-slate-900 mb-3 border border-slate-200/50 group/img cursor-pointer"
+            className="relative aspect-[4/3] overflow-hidden rounded-lg bg-slate-900 mb-4 border border-slate-200/50 group/img cursor-pointer"
             title="Tap photo frame to open full page view"
           >
             <img
@@ -97,7 +97,7 @@ export const MemoryCard = ({ memory, onOpenStory }) => {
           </div>
 
           {/* Polaroid Content */}
-          <div className="flex flex-col text-slate-800">
+          <div className="flex flex-col text-slate-800 space-y-2 py-1">
             <div className="flex items-center justify-between gap-2">
               <h3 className="font-serif font-bold text-lg leading-snug text-slate-900 group-hover:text-rose-600 transition-colors">
                 {memory.title}
@@ -111,11 +111,11 @@ export const MemoryCard = ({ memory, onOpenStory }) => {
               </button>
             </div>
 
-            <p className="handwritten text-slate-700 mt-1">
+            <p className="handwritten text-slate-700 my-1">
               "{memory.caption}"
             </p>
 
-            <div className="flex items-center justify-between text-[11px] text-slate-500 mt-3 pt-2 border-t border-slate-200">
+            <div className="flex items-center justify-between text-[11px] text-slate-500 mt-4 pt-3 border-t border-slate-200">
               {memory.date && (
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3 h-3 text-slate-400" />

@@ -102,11 +102,11 @@ body {
 /* Polaroid image tilt styling */
 .polaroid-frame {
   background: #ffffff;
-  padding: 14px 14px 44px 14px;
-  border-radius: 4px;
+  padding: 16px 16px 24px 16px;
+  border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
   color: #1e293b;
-  transform: rotate(-2deg);
+  transform: rotate(-1.5deg);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
