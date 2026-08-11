@@ -46,7 +46,7 @@ export const MemoryCard = ({ memory, onOpenStory }) => {
   };
 
   return (
-    <div className="perspective-1000 max-w-sm w-full mx-auto my-4 select-none group">
+    <div className="perspective-1000 max-w-sm w-full mx-auto my-8 sm:my-12 py-2 select-none group">
       <motion.div
         animate={{ rotateY: isFlipped ? 180 : 0 }}
         transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}

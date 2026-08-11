@@ -88,31 +88,31 @@ export const TimelineSection = ({ onTrackChange }) => {
       </div>
 
       {/* CHAPTER 1 */}
-      <section className="timeline-chapter-section w-full flex flex-col items-center py-16 sm:py-28" data-track-index="0">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-20 sm:py-32 mb-16 sm:mb-24" data-track-index="0">
         {/* CENTERED TEXT HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 sm:mb-28 px-4"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-indigo-300 mb-6 border border-indigo-400/30">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 glass-pill text-xs sm:text-sm font-bold uppercase tracking-wider text-indigo-300 mb-8 border border-indigo-400/30 shadow-lg">
             <Compass className="w-4 h-4 text-indigo-400" />
             {DEFAULT_PLAYLIST[0].title}
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-white glow-text leading-tight max-w-3xl text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-white glow-text leading-tight max-w-3xl text-center my-6 sm:my-8">
             {DEFAULT_PLAYLIST[0].subtitle}
           </h2>
 
-          <p className="text-slate-300 max-w-2xl mx-auto mt-6 text-sm sm:text-lg font-light italic leading-relaxed text-center">
+          <p className="text-slate-300 max-w-2xl mx-auto mt-8 text-sm sm:text-lg font-light italic leading-relaxed text-center">
             "{DEFAULT_PLAYLIST[0].quote}"
           </p>
         </motion.div>
 
-        {/* CENTERED IMAGES GRID */}
-        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4">
+        {/* CENTERED IMAGES GRID WITH 2-3 INCH TOP GAP */}
+        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4 mt-16 sm:mt-24 pt-8">
           {MEMORIES_DATA.chapter1.map((mem) => (
             <MemoryCard key={mem.id} memory={mem} onOpenStory={(m) => setSelectedStory(m)} />
           ))}
@@ -120,29 +120,29 @@ export const TimelineSection = ({ onTrackChange }) => {
       </section>
 
       {/* CHAPTER 2 */}
-      <section className="timeline-chapter-section w-full flex flex-col items-center py-20 sm:py-32" data-track-index="1">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-24 sm:py-36 mb-16 sm:mb-24" data-track-index="1">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 sm:mb-28 px-4"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-amber-300 mb-6 border border-amber-400/30">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 glass-pill text-xs sm:text-sm font-bold uppercase tracking-wider text-amber-300 mb-8 border border-amber-400/30 shadow-lg">
             <Sparkles className="w-4 h-4 text-amber-400" />
             {DEFAULT_PLAYLIST[1].title}
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-amber-200 gold-glow-text leading-tight max-w-3xl text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-amber-200 gold-glow-text leading-tight max-w-3xl text-center my-6 sm:my-8">
             {DEFAULT_PLAYLIST[1].subtitle}
           </h2>
 
-          <p className="text-amber-100/80 max-w-2xl mx-auto mt-6 text-sm sm:text-lg font-light italic leading-relaxed text-center">
+          <p className="text-amber-100/80 max-w-2xl mx-auto mt-8 text-sm sm:text-lg font-light italic leading-relaxed text-center">
             "{DEFAULT_PLAYLIST[1].quote}"
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4 mt-16 sm:mt-24 pt-8">
           {MEMORIES_DATA.chapter2.map((mem) => (
             <MemoryCard key={mem.id} memory={mem} onOpenStory={(m) => setSelectedStory(m)} />
           ))}
@@ -150,29 +150,29 @@ export const TimelineSection = ({ onTrackChange }) => {
       </section>
 
       {/* CHAPTER 3 */}
-      <section className="timeline-chapter-section w-full flex flex-col items-center py-20 sm:py-32" data-track-index="2">
+      <section className="timeline-chapter-section w-full flex flex-col items-center py-24 sm:py-36 mb-16 sm:mb-24" data-track-index="2">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-24 px-4"
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-20 sm:mb-28 px-4"
         >
-          <div className="inline-flex items-center gap-2 px-5 py-2 glass-pill text-xs font-bold uppercase tracking-wider text-emerald-300 mb-6 border border-emerald-400/30">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 glass-pill text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-300 mb-8 border border-emerald-400/30 shadow-lg">
             <Star className="w-4 h-4 text-emerald-400" />
             {DEFAULT_PLAYLIST[2].title}
           </div>
 
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-emerald-200 leading-tight max-w-3xl text-center">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-serif text-emerald-200 leading-tight max-w-3xl text-center my-6 sm:my-8">
             {DEFAULT_PLAYLIST[2].subtitle}
           </h2>
 
-          <p className="text-emerald-200/80 max-w-2xl mx-auto mt-6 text-sm sm:text-lg font-light italic leading-relaxed text-center">
+          <p className="text-emerald-200/80 max-w-2xl mx-auto mt-8 text-sm sm:text-lg font-light italic leading-relaxed text-center">
             "{DEFAULT_PLAYLIST[2].quote}"
           </p>
         </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-center gap-12 sm:gap-24 lg:gap-36 w-full max-w-6xl mx-auto px-4 mt-16 sm:mt-24 pt-8">
           {MEMORIES_DATA.chapter3.map((mem) => (
             <MemoryCard key={mem.id} memory={mem} onOpenStory={(m) => setSelectedStory(m)} />
           ))}

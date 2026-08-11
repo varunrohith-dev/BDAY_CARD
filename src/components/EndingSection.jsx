@@ -39,7 +39,7 @@ export const EndingSection = ({ onReplay }) => {
   };
 
   return (
-    <section className="relative z-10 w-full flex flex-col items-center justify-center mx-auto py-16 sm:py-24 select-none">
+    <section className="relative z-10 w-full flex flex-col items-center justify-center mx-auto pt-32 pb-24 sm:pt-40 sm:pb-32 my-12 select-none">
 
       <div className="flex flex-col items-center justify-center w-full max-w-4xl px-4 sm:px-8">
         {/* PERFECTLY CENTERED MORPHING QUOTE CARD */}
